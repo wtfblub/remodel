@@ -1376,9 +1376,11 @@ class FunctionImpl
 
 #ifdef ZYCORE_MSVC
     REMODEL_DEF_FUNCTION(__cdecl);
+#ifndef ZYCORE_X64
     REMODEL_DEF_FUNCTION(__stdcall);
     REMODEL_DEF_FUNCTION(__thiscall);
     REMODEL_DEF_FUNCTION(__fastcall);
+#endif
     REMODEL_DEF_FUNCTION(__vectorcall);
     REMODEL_DEF_VARARG_FUNCTION(__cdecl);
 #elif defined(ZYCORE_GNUC)
@@ -1509,9 +1511,11 @@ class MemberFunctionImpl
 
 #ifdef ZYCORE_MSVC
     REMODEL_DEF_MEMBER_FUNCTION(__cdecl);
+#ifndef ZYCORE_X64
     REMODEL_DEF_MEMBER_FUNCTION(__stdcall);
     REMODEL_DEF_MEMBER_FUNCTION(__thiscall);
     REMODEL_DEF_MEMBER_FUNCTION(__fastcall);
+#endif
     REMODEL_DEF_MEMBER_FUNCTION(__vectorcall);
     REMODEL_DEF_VARARG_MEMBER_FUNCTION(__cdecl);
 #elif defined(ZYCORE_GNUC)
